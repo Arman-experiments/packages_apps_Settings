@@ -82,6 +82,8 @@ import com.android.settingslib.widget.SettingsThemeHelper;
 
 import com.google.android.setupcompat.util.WizardManagerHelper;
 
+import com.android.settings.utils.UserUtils;
+
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Set;
@@ -117,6 +119,8 @@ public class SettingsHomepageActivity extends FragmentActivity implements
     private boolean mIsTwoPane;
     // A regular layout shows icons on homepage, whereas a simplified layout doesn't.
     private boolean mIsRegularLayout = true;
+    
+    private UserUtils mUserUtils;
 
     private SplitControllerCallbackAdapter mSplitControllerAdapter;
     private SplitInfoCallback mCallback;
@@ -261,7 +265,11 @@ public class SettingsHomepageActivity extends FragmentActivity implements
         updateHomepageBackground();
         mLoadedListeners = new ArraySet<>();
 
+        mUserUtils = UserUtils.Companion.getInstance(getApplicationContext());
+
         initSearchBarView();
+        
+        initAvatarView();
 
         getLifecycle().addObserver(new HideNonSystemOverlayMixin(this));
         mCategoryMixin = new CategoryMixin(this);
@@ -302,6 +310,12 @@ public class SettingsHomepageActivity extends FragmentActivity implements
         updateSplitLayout();
 
         enableTaskLocaleOverride();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        initAvatarView();
     }
 
     @VisibleForTesting
