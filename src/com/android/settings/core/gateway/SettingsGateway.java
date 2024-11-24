@@ -443,7 +443,12 @@ public class SettingsGateway {
             com.rising.settings.fragments.ui.fonts.FontPickerPreview.class.getName(),
             Notifications.class.getName(),
             Sound.class.getName(),
-            com.rising.settings.fragments.ui.IconShapes.class.getName()
+            com.rising.settings.fragments.ui.IconShapes.class.getName(),
+            StatusBar.class.getName(),
+            QuickSettings.class.getName(),
+            Gestures.class.getName(),
+            SmartPixels.class.getName(),
+            com.rising.settings.fragments.lockscreen.LockClockFontsPickerPreview.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -499,6 +504,10 @@ public class SettingsGateway {
             Settings.PersonalizationsFontsActivity.class.getName(),
             Settings.PersonalizationsSoundsActivity.class.getName(),
             Settings.PersonalizationsIconsActivity.class.getName(),
-            Settings.PersonalizationsNotificationsActivity.class.getName()
+            Settings.PersonalizationsNotificationsActivity.class.getName(),
+            Settings.PersonalizationsStatusBarActivity.class.getName(),
+            Settings.PersonalizationsQuickSettingsActivity.class.getName(),
+            Settings.PersonalizationsGesturesActivity.class.getName(),
+            Settings.PersonalizationsClockFacesActivity.class.getName()
     };
 }
