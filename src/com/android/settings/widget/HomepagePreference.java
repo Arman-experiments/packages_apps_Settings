@@ -32,7 +32,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.android.settings.R;
-import com.android.settings.network.MobileNetworkPreferenceController;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceViewHolder;
@@ -44,8 +43,6 @@ import com.android.settingslib.drawer.EntriesProvider;
 /** A customized layout for homepage preference. */
 public class HomepagePreference extends Preference implements
         HomepagePreferenceLayoutHelper.HomepagePreferenceLayout {
-        
-    private final MobileNetworkPreferenceController mMobileNetworkPreferenceController;
 
     private final HomepagePreferenceLayoutHelper mHelper;
     private final Handler mHandler = new Handler();
@@ -62,25 +59,21 @@ public class HomepagePreference extends Preference implements
                               int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         mHelper = new HomepagePreferenceLayoutHelper(this);
-        mMobileNetworkPreferenceController = new MobileNetworkPreferenceController(getContext());
     }
 
     public HomepagePreference(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mHelper = new HomepagePreferenceLayoutHelper(this);
-        mMobileNetworkPreferenceController = new MobileNetworkPreferenceController(getContext());
     }
 
     public HomepagePreference(Context context, AttributeSet attrs) {
         super(context, attrs);
         mHelper = new HomepagePreferenceLayoutHelper(this);
-        mMobileNetworkPreferenceController = new MobileNetworkPreferenceController(getContext());
     }
 
     public HomepagePreference(Context context) {
         super(context);
         mHelper = new HomepagePreferenceLayoutHelper(this);
-        mMobileNetworkPreferenceController = new MobileNetworkPreferenceController(getContext());
     }
 
     @Override
@@ -110,7 +103,7 @@ public class HomepagePreference extends Preference implements
         String key = getKey();
         if ("top_level_network".equals(key)) {
             String connectedNetwork = getConnectedNetwork(getContext());
-            String summary = getContext().getString(mMobileNetworkPreferenceController.isAvailable() 
+            String summary = getContext().getString(com.android.settings.utils.NetworkUtils.isNetworkAvailable(getContext()) 
                 ? R.string.network_dashboard_summary_mobile : R.string.network_dashboard_summary_no_mobile);
             setSummary(connectedNetwork != null ? connectedNetwork : summary);
         } else if ("top_level_connected_devices".equals(key)) {
