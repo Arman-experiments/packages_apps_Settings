@@ -70,7 +70,7 @@
                   android:icon="@drawable/ic_color_bucket"
                   android:exported="true">
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                       android:value="com.rising.settings.fragments.MonetSettings" />
+                       android:value="com.rising.settings.fragments.ColorsSettingsFragment" />
         </activity>
         <!-- Font Picker -->
         <activity android:name="Settings$PersonalizationsFontsActivity"
@@ -128,14 +128,6 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                        android:value="com.rising.settings.fragments.Gestures" />
         </activity>
-        <!-- Clock Faces -->
-        <activity android:name="Settings$PersonalizationsClockFacesActivity"
-                  android:label="@string/theme_customization_lock_clock_title"
-                  android:icon="@drawable/ic_color_bucket"
-                  android:exported="true">
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                       android:value="com.rising.settings.fragments.lockscreen.LockClockFontsPickerPreview" />
-        </activity>
         <!-- Changelog -->
         <activity android:name="com.rising.settings.fragments.about.ChangelogActivity"
                 android:label="@string/changelog_rising_title"
@@ -157,15 +149,6 @@
                   android:exported="true">
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                        android:value="com.rising.settings.fragments.lockscreen.LockScreenWidgets" />
-        </activity>
-        
-        <!-- PD -->
-        <activity android:name="Settings$PersonalizationsPDActivity"
-                  android:label="@string/peek_display_notifications_title"
-                  android:icon="@drawable/ic_color_bucket"
-                  android:exported="true">
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                       android:value="com.rising.settings.fragments.lockscreen.PeekDisplay" />
         </activity>
         
         <!-- AOD -->
@@ -222,24 +205,17 @@
                        android:value="com.rising.settings.fragments.Wallpaper" />
         </activity>
 
-        <receiver
-            android:name=".fuelgauge.PowerModeBootCompletedReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
-        <service
-            android:name=".fuelgauge.PowerModeTileService"
-            android:icon="@drawable/ic_power_default"
-            android:label="PowerModeTileService"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
-            android:exported="true"
-            android:enabled="true">
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE"/>
-            </intent-filter>
-        </service>
+        <!-- LSCIC -->
+	<activity
+	    android:name="com.rising.settings.fragments.lockscreen.LockscreenCustomizerActivity"
+	    android:exported="true"
+	    android:theme="@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen"
+	    android:screenOrientation="portrait"
+	    android:configChanges="orientation|screenSize|keyboardHidden">
+	    <intent-filter>
+	        <action android:name="android.intent.action.MAIN" />
+	        <category android:name="android.intent.category.DEFAULT" />
+	    </intent-filter>
+	</activity>
     </application>
 </manifest>

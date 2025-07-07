@@ -439,7 +439,7 @@ public class SettingsGateway {
             LockScreen.class.getName(),
             Themes.class.getName(),
             Toolbox.class.getName(),
-            MonetSettings.class.getName(),
+            ColorsSettingsFragment.class.getName(),
             com.rising.settings.fragments.ui.fonts.FontPickerPreview.class.getName(),
             Notifications.class.getName(),
             Sound.class.getName(),
@@ -447,7 +447,6 @@ public class SettingsGateway {
             StatusBar.class.getName(),
             QuickSettings.class.getName(),
             Gestures.class.getName(),
-            SmartPixels.class.getName(),
             com.rising.settings.fragments.lockscreen.LockClockFontsPickerPreview.class.getName()
     };
 
