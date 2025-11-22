@@ -145,6 +145,7 @@ android_library {
         // Lineage dependencies
         "org.lineageos.platform.internal",
         "LineagePreferenceLib",
+        "blurview",
     ],
 
     plugins: [
@@ -254,4 +255,9 @@ filegroup {
 android_library_import {
     name: "glide",
     aars: ["libs/glide-4.16.0.aar"],
+}
+
+android_library_import {
+    name: "blurview",
+    aars: ["libs/BlurView-3.2.0.aar"],
 }
