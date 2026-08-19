@@ -31,18 +31,16 @@
             android:id="@+id/main_content_scrollable_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-8dp"
-            android:orientation="vertical">
+            android:layout_marginTop="-8dp">
 
-            <FrameLayout
-                android:id="@+id/suggestion_content"
+            <LinearLayout
+                android:id="@+id/homepage_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="?android:attr/listPreferredItemPaddingStart"
-                android:layout_marginEnd="?android:attr/listPreferredItemPaddingEnd" />
+                android:orientation="vertical">
 
             <FrameLayout
-                android:id="@+id/contextual_cards_content"
+                android:id="@+id/homepage_content_area"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -76,11 +74,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
-                <include
-                    android:id="@+id/suggestion_container_two_pane"
-                    layout="@layout/suggestion_container_two_pane"
-                    android:visibility="gone"/>
-
                 <FrameLayout
                     android:id="@+id/contextual_cards_content"
                     android:layout_width="match_parent"
@@ -94,6 +87,7 @@
                     android:layout_height="wrap_content"
                     android:animateLayoutChanges="true"/>
             </FrameLayout>
+            </LinearLayout>
         </androidx.core.widget.NestedScrollView>
 
     </eightbitlab.com.blurview.BlurTarget>

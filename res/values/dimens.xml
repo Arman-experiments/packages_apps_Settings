@@ -15,6 +15,10 @@
 -->
 
 <resources>
+    <dimen name="search_bar_content_inset">0dp</dimen>
+    <dimen name="search_bar_padding_start">16dp</dimen>
+    <dimen name="avatar_margin_end">16dp</dimen>
+
     <dimen name="match_parent">-1px</dimen>
 
     <dimen name="theme_icon_size">120dp</dimen>

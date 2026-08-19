@@ -130,7 +130,7 @@
             android:key="top_level_sound"
             android:order="-40"
             android:title="@string/sound_settings"
-            android:summary="@string/sound_dashboard_summary_with_dnd"
+            android:summary="@string/sound_dashboard_summary"
             settings:highlightableMenuKey="@string/menu_key_sound"
             settings:controller="com.android.settings.sound.TopLevelSoundPreferenceController"/>
 

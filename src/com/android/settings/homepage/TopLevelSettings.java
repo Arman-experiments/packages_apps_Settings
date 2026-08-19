@@ -100,12 +100,10 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
     protected int getPreferenceScreenResId() {
         switch (mDashBoardStyle) {
             case 0:
-                return R.xml.top_level_settings_v2;
-            case 1:
                 return R.xml.top_level_settings_simple;
-            case 2:
+            case 1:
                 return R.xml.top_level_settings_expressive;
-            case 3:
+            case 2:
                 return R.xml.top_level_settings_expressive_rising;
             default:
                 return getPreferenceLayoutResId(getContext());
